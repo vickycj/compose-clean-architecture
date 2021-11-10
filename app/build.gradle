@@ -53,6 +53,7 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_ktx"
     implementation "androidx.activity:activity-compose:$compose_activity"
+    implementation project(path: ':login')
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$junit_test"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"

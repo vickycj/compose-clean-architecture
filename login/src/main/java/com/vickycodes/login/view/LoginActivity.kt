@@ -1,4 +1,4 @@
-package com.vickycodes.login
+package com.vickycodes.login.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
