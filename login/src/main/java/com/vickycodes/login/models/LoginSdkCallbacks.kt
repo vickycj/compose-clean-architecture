@@ -1,4 +1,4 @@
-package com.vickycodes.login.implementations
+package com.vickycodes.login.models
 
 import com.vickycodes.login.errors.Errors
 

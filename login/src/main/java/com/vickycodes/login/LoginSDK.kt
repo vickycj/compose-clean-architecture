@@ -1,11 +1,12 @@
 package com.vickycodes.login
 
 import android.app.Application
-import com.vickycodes.login.implementations.LoginSdkCallbacks
+import com.vickycodes.login.models.LoginSDKMode
+import com.vickycodes.login.models.LoginSdkCallbacks
 
 interface LoginSDK {
 
-    fun initialise(application: Application)
+    fun initialise(application: Application, loginSDKMode: LoginSDKMode)
 
     fun launchLoginScreen(loginSdkCallbacks: LoginSdkCallbacks)
 
