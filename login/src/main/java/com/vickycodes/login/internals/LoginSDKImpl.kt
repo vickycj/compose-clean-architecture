@@ -1,4 +1,4 @@
-package com.vickycodes.login.implementations
+package com.vickycodes.login.internals
 
 import android.app.Application
 import com.vickycodes.login.LoginSDK

@@ -3,7 +3,7 @@ package com.vickycodes.login.modules
 import android.content.Context
 import com.google.gson.Gson
 import com.vickycodes.login.data.*
-import com.vickycodes.login.implementations.ApplicationInstance
+import com.vickycodes.login.internals.ApplicationInstance
 import com.vickycodes.login.utils.Constants
 import com.vickycodes.login.utils.NetworkUtils
 import okhttp3.OkHttpClient

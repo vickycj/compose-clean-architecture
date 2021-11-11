@@ -1,7 +1,7 @@
 package com.vickycodes.login
 
 import android.app.Application
-import com.vickycodes.login.implementations.LoginSDKImpl
+import com.vickycodes.login.internals.LoginSDKImpl
 import com.vickycodes.login.data.LoginSDKMode
 import com.vickycodes.login.callbacks.LoginSdkCallbacks
 
