@@ -3,6 +3,7 @@ package com.vickycodes.login.view
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -36,10 +37,11 @@ class LoginActivity : BaseActivity() {
                     val isLoading by loginViewModel.loader
                     val loginResult by loginViewModel.loginResult
                     when {
-                        loginResult -> Loader(isLoading = isLoading) {
-                            loginSuccessScreen()
-                        }
-                        else -> launchLoginScreen(loginViewModel = loginViewModel)
+                        loginResult -> loginSuccessScreen()
+                        else -> launchLoginScreen(
+                            loginViewModel = loginViewModel,
+                            isLoading = isLoading
+                        )
                     }
 
 
@@ -50,19 +52,23 @@ class LoginActivity : BaseActivity() {
 }
 
 @Composable
-fun launchLoginScreen(loginViewModel: LoginViewModel) {
-    LoginScreen(
-        username = loginViewModel.userName,
-        usernameValChange = {
-            loginViewModel.userName = it
-        },
-        password = loginViewModel.password,
-        passwordValChange = {
-            loginViewModel.password = it
-        },
-        loginButtonClick = {
-            loginViewModel.loginClicked()
-        })
+fun launchLoginScreen(loginViewModel: LoginViewModel, isLoading: Boolean) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        LoginScreen(
+            username = loginViewModel.userName,
+            usernameValChange = {
+                loginViewModel.userName = it
+            },
+            password = loginViewModel.password,
+            passwordValChange = {
+                loginViewModel.password = it
+            },
+            loginButtonClick = {
+                loginViewModel.loginClicked()
+            })
+
+        Loader(isLoading = isLoading)
+    }
 }
 
 @Composable

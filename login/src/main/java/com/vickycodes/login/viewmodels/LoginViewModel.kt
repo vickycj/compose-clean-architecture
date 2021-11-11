@@ -15,19 +15,19 @@ class LoginViewModel : BaseViewModel() {
     var password by mutableStateOf("")
 
     private val _loginSuccess = mutableStateOf(false)
-    val loginResult : State<Boolean> = _loginSuccess
+    val loginResult: State<Boolean> = _loginSuccess
 
     fun loginClicked() {
         effect {
             loaderVal.value = true
-           when(val result =  loginRepository.login(userName, password)){
-               is Results.Success -> {
-                   _loginSuccess.value = true
-               }
-               is Results.Error -> {
-                   _loginSuccess.value = true
-               }
-           }
+            when (val result = loginRepository.login(userName, password)) {
+                is Results.Success -> {
+                    _loginSuccess.value = true
+                }
+                is Results.Error -> {
+                    _loginSuccess.value = true
+                }
+            }
             loaderVal.value = false
         }
     }
