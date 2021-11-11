@@ -1,4 +1,4 @@
-package com.vickycodes.login.models
+package com.vickycodes.login.data
 
 sealed class LoginSDKMode {
     object SANDBOX : LoginSDKMode()

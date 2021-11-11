@@ -1,4 +1,4 @@
-package com.vickycodes.login.models
+package com.vickycodes.login.callbacks
 
 import com.vickycodes.login.errors.Errors
 
