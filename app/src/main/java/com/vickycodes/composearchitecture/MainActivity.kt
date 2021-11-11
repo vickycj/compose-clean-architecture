@@ -12,7 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.vickycodes.composearchitecture.ui.theme.ComposeCleanArchitectureTheme
 import com.vickycodes.login.LoginSDK
+import com.vickycodes.login.callbacks.LoginSdkCallbacks
 import com.vickycodes.login.data.LoginSDKMode
+import com.vickycodes.login.errors.Errors
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +22,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeCleanArchitectureTheme {
 
-                LoginSDK.getInstance().initialise(application, LoginSDKMode.PRODUCTION)
+                LoginSDK.getInstance().launchLoginScreen(this,object : LoginSdkCallbacks {
+                    override fun loginSuccess() {
+
+                    }
+
+                    override fun loginFailure(errors: Errors) {
+
+                    }
+
+                })
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

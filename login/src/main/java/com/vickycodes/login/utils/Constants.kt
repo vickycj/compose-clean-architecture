@@ -2,7 +2,7 @@ package com.vickycodes.login.utils
 
 object Constants {
 
-    val SANBOX_URL = ""
+    val SANBOX_URL = "https://google.com"
 
-    val PRODUCTION_URL = ""
+    val PRODUCTION_URL = "https://google.com"
 }

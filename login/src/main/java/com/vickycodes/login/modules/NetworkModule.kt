@@ -24,15 +24,15 @@ object NetworkModule {
     }
 
     val networkUtils: NetworkUtils by lazy {
-        NetworkUtils(ApplicationInstance.application)
+        NetworkUtils(ApplicationInstance.getApplication())
     }
 
     val networkManager: NetworkManager by lazy {
-        NetworkManager(networkUtils, ApplicationInstance.application)
+        NetworkManager(networkUtils, ApplicationInstance.getApplication())
     }
 
     private val headerInterceptor: HeaderInterceptor by lazy {
-        provideHeaderInterceptor(ApplicationInstance.application)
+        provideHeaderInterceptor(ApplicationInstance.getApplication())
     }
 
     private val loggingInterceptor: HttpLoggingInterceptor by lazy {

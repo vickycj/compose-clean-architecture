@@ -1,12 +1,19 @@
 package com.vickycodes.login.base
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.State
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 open class BaseViewModel : ViewModel() {
 
-    private val _loader = MutableLiveData<Boolean>()
-    val loader : LiveData<Boolean> = _loader
+    protected val loaderVal = mutableStateOf(false)
+    val loader : State<Boolean> = loaderVal
+
+    protected fun effect(block: suspend () -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) { block() }    // 4
+    }
 
 }

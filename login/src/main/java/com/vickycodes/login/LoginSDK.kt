@@ -1,5 +1,6 @@
 package com.vickycodes.login
 
+import android.app.Activity
 import android.app.Application
 import com.vickycodes.login.internals.LoginSDKImpl
 import com.vickycodes.login.data.LoginSDKMode
@@ -9,7 +10,7 @@ interface LoginSDK {
 
     fun initialise(application: Application, loginSDKMode: LoginSDKMode)
 
-    fun launchLoginScreen(loginSdkCallbacks: LoginSdkCallbacks)
+    fun launchLoginScreen(activity: Activity, loginSdkCallbacks: LoginSdkCallbacks)
 
     fun login(username:String, password: String, loginSdkCallbacks: LoginSdkCallbacks)
 

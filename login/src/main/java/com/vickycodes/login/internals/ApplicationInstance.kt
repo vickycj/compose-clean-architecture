@@ -4,7 +4,9 @@ import android.app.Application
 
 object ApplicationInstance {
     @Volatile
-    lateinit var application: Application
+    private lateinit var application: Application
+
+    fun getApplication() = application
 
     fun holdApplication(_application: Application) {
         if (!::application.isInitialized) {
